@@ -23,14 +23,16 @@ if(!$conn)
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link btn-outline-primary" href="index.php">Trang chủ</a>
+                    <a class="nav-link btn-outline-primary" href="home.php">Trang chủ</a>
                 </li>
-                
+                <li class="nav-item active">
+                    <a class="nav-link btn-outline-primary" href="#">Diễn đàn</a>
+                </li>
                 <li class="nav-item active">
                     <a class="nav-link btn-outline-primary" href="#">Giới thiệu</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link btn-outline-primary" href="dangnhap.php">Đăng nhập</a>
+                    <a class="nav-link btn-outline-primary" href="dangnhap.php">Đăng Xuất</a>
                 </li>
             </ul>
         </div>

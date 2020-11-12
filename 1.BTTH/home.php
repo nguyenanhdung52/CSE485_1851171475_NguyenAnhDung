@@ -20,7 +20,7 @@
   </head>
   <body>
       <?php 
-            include('includes/header.php');
+            include('includes/headerhome.php');
       ?>
       <div id="slides" class="carousel slide container-fluid" data-ride="carousel" >
         <ul class="carousel-indicators">
