@@ -26,7 +26,7 @@ if(!$conn)
                     <a class="nav-link btn-outline-primary" href="home.php">Trang chủ</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link btn-outline-primary" href="#">Diễn đàn</a>
+                    <a class="nav-link btn-outline-primary" href="viewDiendan.php">Diễn đàn</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link btn-outline-primary" href="#">Giới thiệu</a>

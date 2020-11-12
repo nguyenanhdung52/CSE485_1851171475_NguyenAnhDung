@@ -1,3 +1,23 @@
+<?php
+	session_start(); 
+ ?>
+<?php require_once("config/connect.php"); ?>
+<?php
+	if (isset($_POST["btn_submit"])) {
+		//lấy thông tin từ các form bằng phương thức POST
+		$title = $_POST["title"];
+		$content = $_POST["content"];
+		
+		$user_id = $_SESSION["user_id"];
+
+		$sql = "INSERT INTO posts(title, content, user_id, createdate,) VALUES ( '$title', '$content', '$user_id', now())";
+		// thực thi câu $sql với biến conn lấy từ file connection.php
+		mysqli_query($conn,$sql);
+		echo "Bài viết đã thêm thành công";
+	}
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,7 +30,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      <?php
+  <?php
         include('includes/headerhome.php');
       ?>
     <nav class="navbar navbar-expand-md navbar-light bg-primary sticky-top">
@@ -21,7 +41,7 @@
                     <a class="nav-link btn-outline-light" href="dangbai.php">Đăng bài</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link btn-outline-light" href="#">Sự kiện</a>
+                    <a class="nav-link btn-outline-light" href="viewDiendan.php">Bài viết</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link btn-outline-light" href="#">Nghiên cứu khoa học</a>
@@ -34,8 +54,29 @@
     </div>
     </nav>
 
-   
+  <div class="container">
+  <form action="them-bai-viet.php" method="post">
+		<table>
+			<tr>
+				<td colspan="2"><h3>Thêm bài viết mới</h3></td>
+			</tr>	
+			<tr>
+				<td nowrap="nowrap">Tiêu đề bài viết :</td>
+				<td><input type="text" id="title" name="title"></td>
+			</tr>
+			<tr>
+				<td nowrap="nowrap">Nội dung :</td>
+				<td><textarea name="content" id="content" rows="10" cols="150"></textarea></td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" align="center"><input type="submit" name="btn_submit" value="Thêm bài viết"></td>
+			</tr>
 
+		</table>
+		
+	</form>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

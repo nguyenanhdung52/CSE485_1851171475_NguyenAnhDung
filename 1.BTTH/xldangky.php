@@ -7,8 +7,13 @@
     $sql = "INSERT INTO user (Name, Password)  VALUES ('$name','$password') ";
     $result = mysqli_query($conn,$sql);
     if($result){
-        header("Location:dangnhap.php");
+        if($name = 1){
+            header("Location:dangnhap.php");
+        }else{
+            echo "Error :".$sql;
+        }
     }
+
     else{
         echo "Error :".$sql;
     }
