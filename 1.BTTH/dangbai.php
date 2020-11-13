@@ -1,23 +1,3 @@
-<?php
-	session_start(); 
- ?>
-<?php require_once("config/connect.php"); ?>
-<?php
-	if (isset($_POST["btn_submit"])) {
-		//lấy thông tin từ các form bằng phương thức POST
-		$title = $_POST["title"];
-		$content = $_POST["content"];
-		
-		$user_id = $_SESSION["user_id"];
-
-		$sql = "INSERT INTO posts(title, content, user_id, createdate,) VALUES ( '$title', '$content', '$user_id', now())";
-		// thực thi câu $sql với biến conn lấy từ file connection.php
-		mysqli_query($conn,$sql);
-		echo "Bài viết đã thêm thành công";
-	}
-
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -70,7 +50,7 @@
 			</tr>
 			
 			<tr>
-				<td colspan="2" align="center"><input type="submit" name="btn_submit" value="Thêm bài viết"></td>
+				<td colspan="2" align="center"><input type="submit" name="btn_submit" value="Thêm bài viết" href="#"></td>
 			</tr>
 
 		</table>
