@@ -27,7 +27,7 @@
                     <a class="nav-link btn-outline-light" href="#">Nghiên cứu khoa học</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link btn-outline-light" href="dangnhap.php">Kết nối sinh viên</a>
+                    <a class="nav-link btn-outline-light" href="#">Kết nối sinh viên</a>
                 </li>
             </ul>
         </div>

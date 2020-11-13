@@ -1,26 +1,17 @@
 <?php
+    session_start();
     require_once('config/connect.php');
-    $name = $password = $pwd = '';
-
-    $name = $_POST['user'];
-    $pwd = $_POST['password'];
-    $password = MD5($pwd);
-    $sql = "SELECT * FROM user WHERE Name='$name' AND Password='$password'";
-
-    $result = mysqli_query($conn,$sql);
-    if(mysqli_num_rows($result) > 0)
-    {
-        while($row = mysqli_fetch_assoc($result))
-        {
-            $id= $row["ID"];
-            $name= $row['Name'];
-            session_start();
-            $_SESSION['id']=$id;
-            $_SESSION['name']=$name;
-        }    
-        header("Location: home.php");
-    }
+    if( isset($_POST['submit']) && $_POST['username'] != '' &&  $_POST['password'] != '' );
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $password = MD5($password);
+    $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
+    $user = mysqli_query($conn,$sql);
+        if(mysqli_num_rows($user) > 0){
+        $_SESSION["user"] = $username;
+        header("location:home.php");
+        }
     else{
-        echo "Invalid ";
+        header("location:dangnhap.php");
     }
 ?>

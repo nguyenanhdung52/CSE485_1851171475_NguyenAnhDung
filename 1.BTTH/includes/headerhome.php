@@ -16,7 +16,7 @@ if(!$conn)
 
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"><img src="img/logo.jpg"></a> 
+        <a class="navbar-brand" href="home.php"><img src="img/logo.jpg"></a> 
         <button class="navbar-toggler"type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,7 +32,7 @@ if(!$conn)
                     <a class="nav-link btn-outline-primary" href="#">Giới thiệu</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link btn-outline-primary" href="dangnhap.php">Đăng Xuất</a>
+                    <a class="nav-link btn-outline-primary" href="dangxuat.php">Đăng Xuất</a>
                 </li>
             </ul>
         </div>
